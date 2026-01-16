@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -292,7 +294,75 @@
                 </div>
             </div>
         </div>
-    </section>
+    
+        <!-- Project 02: Footprints -->
+        <div class="glass-panel p-8 md:p-12 flex flex-col lg:flex-row-reverse gap-12 items-center mt-12">
+            <div class="w-full lg:w-1/2 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-porsche-red/20 text-porsche-red px-3 py-1 text-xs font-bold uppercase tracking-widest border border-porsche-red/30">
+                    Project 02: Privacy Engineering
+                </div>
+                <h3 class="text-3xl font-bold tracking-tight text-porsche-light uppercase tracking-tighter text-sm md:text-3xl">Footprints: Privacy Demo & Tracking Visualization</h3>
+                <p class="text-gray-300 font-light leading-relaxed">
+                    Footprints is a <span class="text-white font-medium">privacy demo</span> that reveals how much a normal website can learn about you <span class="text-white font-medium">without logins, cookies, or permissions</span>. It makes invisible tracking visible by using tools already built into the browser.
+                </p>
+                
+                <div class="space-y-4">
+                    <button onclick="toggleProjectDetails()" class="bg-white text-porsche-dark px-6 py-3 font-bold hover:bg-gray-200 transition-all flex items-center gap-2 uppercase tracking-widest text-xs">
+                        Read Full Specs <i data-lucide="chevron-down" id="details-icon" class="w-4 h-4"></i>
+                    </button>
+                    <a href="https://footprints-kishore.netlify.app/" target="_blank" class="inline-flex items-center gap-2 border border-white text-white px-6 py-3 font-bold hover:bg-white hover:text-porsche-dark transition-all uppercase tracking-widest text-xs">
+                        View Live Project <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div id="project-details" class="hidden space-y-6 pt-6 border-t border-white/10 text-sm text-gray-400 font-light">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-white font-bold uppercase tracking-tight mb-2">Frontend Architecture</h4>
+                            <ul class="list-disc pl-4 space-y-1">
+                                <li>React + TypeScript</li>
+                                <li>Device & Browser Fingerprinting (CPU, GPU, WebGL, Canvas)</li>
+                                <li>Behavior Tracking (Mouse speed, Typing rhythm, Exit intent)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase tracking-tight mb-2">Backend & AI</h4>
+                            <ul class="list-disc pl-4 space-y-1">
+                                <li>Bun + Hono (High-speed server)</li>
+                                <li>Redis Global Message Bus for real-time sync</li>
+                                <li>AI Profiling (Grok/MiMo) for trait inference</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white/5 border border-white/10 rounded">
+                        <p class="italic">"Footprints doesn’t invent new tracking. It reveals existing tracking. If this feels invasive, that’s the point."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2">
+                <div class="relative group overflow-hidden rounded-lg border border-white/10 shadow-2xl">
+                    <img src="https://miro.medium.com/1%2AxhzGsCqpuVzhDlwJVKiE0Q.jpeg" alt="Footprints Architecture" class="w-full h-auto img-zoom opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute inset-0 bg-gradient-to-t from-porsche-dark via-transparent to-transparent opacity-60"></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleProjectDetails() {
+                const details = document.getElementById('project-details');
+                const icon = document.getElementById('details-icon');
+                const isHidden = details.classList.contains('hidden');
+                
+                if (isHidden) {
+                    details.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    details.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        </script>
+</section>
 
     <!-- Innovation Registry -->
     <section id="patents" class="py-24 px-6 max-w-[1600px] mx-auto overflow-hidden">
@@ -497,6 +567,7 @@
 
     <!-- Footer / Contact -->
     <footer id="contact" class="bg-[#0b0b0f] pt-24 pb-12 px-6 border-t border-white/5">
+
         <div class="max-w-[1600px] mx-auto text-center text-porsche-light">
             <h2 class="text-3xl md:text-5xl font-bold mb-8 uppercase tracking-tighter">Ready to Accelerate?</h2>
             <p class="text-gray-400 max-w-xl mx-auto mb-12 font-light">
